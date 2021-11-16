@@ -1,4 +1,4 @@
-﻿## Giới thiệu
+## Giới thiệu
 - Đây là chương trình sử dụng Scrapy và Selenium để thu thập 6000 thông tin và nhận xét của sản phẩm từ trang https://www.dienmayxanh.com/
 
 ### Cài đặt:
@@ -7,7 +7,7 @@
     conda install -c conda-forge protego
     conda install -c conda-forge selenium  
 
-- Tải chromedriver + chrome cùng phiên bản để sử dụng Selenium
+Tải chromedriver + chrome cùng phiên bản để sử dụng Selenium
 
 
     DEFAULT_REQUEST_HEADERS = {
@@ -15,7 +15,7 @@
     }
     FEED_EXPORT_ENCODING = 'utf-8'
  
-- Thay đổi user-agent bằng cách thêm đoạn code trên trong setting.py. Chạy code:
+Thay đổi user-agent bằng cách thêm đoạn code trên trong setting.py. Chạy code:
 
     
     scrapy crawl dmx -o data.json
@@ -62,7 +62,7 @@
         except:
             break
 
-- Sử dụng selenium mô phỏng click "xem thêm" để load full page.
+Sử dụng selenium mô phỏng click "xem thêm" để load full page.
 
 
     elems = self.driver.find_elements_by_css_selector("ul.listproduct .main-contain")
@@ -71,7 +71,7 @@
     for url in links:
         yield scrapy.Request(url=url, callback=self.parse_product)
 
-- Lấy link của từng sản phẩm trong trang.
+Lấy link của từng sản phẩm trong trang.
 
 ### Lấy dữ liệu sản phẩm
 
@@ -105,5 +105,5 @@
 
 ### Kết quả:
 - Chương trình chạy xong thu được file dữ liệu data.json, sau đó format lại thành output.txt.
-- Dữ liệu thu được hơn 6300 sản phẩm tuy nhiên có 1 vài dữ liệu bị trùng do được xếp trong nhiều loại.
+- Dữ liệu thu được hơn 6300 sản phẩm tuy nhiên có một vài sản phẩm bị trùng do chúng có thể thuộc nhiều loại.
 - Do máy tính hơi cùi nên thời gian thu thập mất gần 2h.
