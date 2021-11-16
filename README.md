@@ -105,5 +105,5 @@ Lấy link của từng sản phẩm trong trang.
 
 ### Kết quả:
 - Chương trình chạy xong thu được file dữ liệu data.json, sau đó format lại thành output.txt.
-- Dữ liệu thu được hơn 6300 sản phẩm tuy nhiên có một vài sản phẩm bị trùng do chúng có thể thuộc nhiều loại.
+- Dữ liệu thu được hơn 6300 sản phẩm.
 - Do máy tính hơi cùi nên thời gian thu thập mất gần 2h.
